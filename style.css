@@ -1,21 +1,39 @@
+/* === BASE === */
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f9fbfc;
-  color: #2c3e50;
+  background-color: #fcfaf7;
+  color: #3c2e26;
   line-height: 1.6;
 }
 
+/* === ENTÊTE AVEC LOGO === */
 header {
-  background-color: #1c2f40;
+  background-color: #795548; /* chocolat clair */
   color: white;
-  padding: 1.5em 1em;
+  padding: 1.2em 1em;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-header h1 {
+.logo-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+
+.logo-title img {
+  width: 65px;
+  height: 65px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+.logo-title h1 {
   margin: 0;
   font-size: 2em;
   letter-spacing: 1px;
@@ -27,55 +45,100 @@ nav {
 
 nav a {
   margin: 0 10px;
-  color: #f1f1f1;
+  color: #f5f5f5;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 nav a:hover {
-  color: #ffd700;
+  color: #2e7d32;
 }
 
+/* === ACCUEIL AVEC IMAGE DE FOND === */
 .hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url('images/d537aea6-f9b2-11ef-92e3-0242ac110002-IMG-20250126-WA0051.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 4em 1em;
+  min-height: 400px;
   text-align: center;
-  background: linear-gradient(180deg, #ecf5fa, #ffffff);
-  padding: 3em 1em;
+  position: relative;
+  color: white;
 }
 
-.hero h2 {
-  font-size: 1.8em;
-  color: #1c2f40;
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
-.hero p {
-  font-size: 1.1em;
-  max-width: 800px;
+.hero > * {
+  position: relative;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1em;
+  border-radius: 8px;
+  max-width: 850px;
   margin: 0.5em auto;
 }
 
-.intro {
-  padding: 2.5em 1.5em;
+/* === CONTENU GÉNÉRAL === */
+.intro,
+.committee,
+.testimony {
+  padding: 3em 1.5em;
   background: #ffffff;
   text-align: center;
 }
 
-.intro h3 {
+.intro h3,
+.committee h3,
+.testimony h3 {
   font-size: 1.5em;
-  color: #1c2f40;
+  color: #2e7d32;
   margin-bottom: 1em;
 }
 
-.intro p {
+.intro p,
+.committee p,
+.testimony p {
   max-width: 850px;
   margin: auto;
   font-size: 1.1em;
-  color: #333;
+  color: #4e342e;
 }
 
+/* === COMITÉ === */
+.members-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+  margin-top: 2em;
+}
+
+.member {
+  max-width: 180px;
+}
+
+.member img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  margin-bottom: 0.5em;
+}
+
+/* === PIED DE PAGE === */
 footer {
-  background-color: #1c2f40;
-  color: #fff;
+  background-color: #5d4037;
+  color: #e0e0e0;
   text-align: center;
   padding: 1em;
   font-size: 0.9em;
